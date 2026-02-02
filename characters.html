@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KÜT-TOONS Characters Gallery</title>
+  <style>
+    /* Body */
+    body {
+      background: #050000;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      padding: 40px 5%;
+      margin: 0;
+    }
+
+    /* Page Title */
+    h1 {
+      text-align: center;
+      color: #ff3333;
+      text-shadow: 0 0 10px #b30000;
+      font-size: 3em;
+      margin-bottom: 50px;
+      font-family: 'Verdana', sans-serif;
+    }
+
+    /* Back Button and Language Button Container */
+    .button-container {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #1a0000;
+      border: 2px solid #b30000;
+      border-radius: 10px;
+      color: #ff6666;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1em;
+      transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+      background: #b30000;
+      color: #fff;
+      box-shadow: 0 0 15px #ff0000;
+      transform: translateY(-3px);
+    }
+
+    /* Language toggle button */
+    .lang-circle {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: #1a0000;
+      border: 2px solid #b30000;
+      color: #ff4d4d;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+    .lang-circle:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 25px rgba(255,0,0,0.7), 0 0 50px rgba(255,0,0,0.4) inset;
+      background: #b30000;
+      color: #fff;
+    }
+
+    /* Gallery Grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+    }
+
+    /* Card Style */
+    .card {
+      background: #1a0000;
+      border-radius: 15px;
+      overflow: hidden;
+      border: 2px solid #2a0000;
+      box-shadow: 0 0 15px rgba(179, 0, 0, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
+    }
+
+    .card:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.2);
+    }
+
+    /* Caption */
+    .caption {
+      text-align: center;
+      padding: 10px;
+      color: #ff6666;
+      font-weight: bold;
+      text-shadow: 0 0 5px #b30000;
+    }
+
+     /* FOOTER */
+    footer {
+      padding: 50px 10%;
+      background: #020000;
+      border-top: 1px solid #2a0000;
+      text-align: center;
+    }
+    footer a { color: #777; margin: 0 10px; text-decoration: none; font-size: 0.9rem; }
+    footer a:hover { color: #ff4d4d; }
+
+    /* CORNER CHARACTERS */
+    .corner-img {
+      position: fixed;
+      bottom: 0;
+      width: 120px;
+      opacity: 0.85;
+      z-index: 500;
+      cursor: pointer;
+      transition: transform 0.35s ease, opacity 0.35s ease;
+      filter: drop-shadow(0 0 15px rgba(255,0,0,0.6));
+    }
+    .corner-img:hover { transform: scale(1.4) translateY(-20px); opacity: 1; }
+    .corner-left { left: 0; }
+    .corner-right { right: 0; transform: scaleX(-1); }
+
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back Button and Language Button -->
+  <div class="button-container">
+    <a href="index.html" class="back-button">← Back to Home</a>
+    <a href="charactersarab.html" class="lang-circle" title="Switch to Arabic">AR</a>
+  </div>
+
+  <h1>KÜT-TOONS Characters</h1>
+
+  <div class="gallery">
+    <!-- 20 Cards -->
+    <div class="card"><img src="channels4_profile.jpg" alt="Character 1"><div class="caption">logo</div></div>
+    <div class="card"><img src="youtube character.jpg" alt="Character 2"><div class="caption">face</div></div>
+    <div class="card"><img src="cute face.jpg" alt="Character 3"><div class="caption">pose 3</div></div>
+    <div class="card"><img src="relaxing.jpg" alt="Character 4"><div class="caption">pose 4</div></div>
+    <div class="card"><img src="crazy.jpg" alt="Character 5"><div class="caption">pose 5</div></div>
+    <div class="card"><img src="drinking.jpg" alt="Character 6"><div class="caption">pose 6</div></div>
+    <div class="card"><img src="driving.jpg" alt="Character 7"><div class="caption">pose 7</div></div>
+    <div class="card"><img src="fighting.jpg" alt="Character 8"><div class="caption">pose 8</div></div>
+    <div class="card"><img src="gangster.jpg" alt="Character 9"><div class="caption">pose 9</div></div>
+    <div class="card"><img src="gun.jpg" alt="Character 10"><div class="caption">pose 10</div></div>
+    <div class="card"><img src="monster.jpg" alt="Character 11"><div class="caption">pose 11</div></div>
+    <div class="card"><img src="need food.jpg" alt="Character 12"><div class="caption">pose 12</div></div>
+    <div class="card"><img src="no way to go.jpg" alt="Character 13"><div class="caption">pose 13</div></div>
+    <div class="card"><img src="noble.jpg" alt="Character 14"><div class="caption">pose 14</div></div>
+    <div class="card"><img src="oops.jpg" alt="Character 15"><div class="caption">pose 15</div></div>
+    <div class="card"><img src="seeing weird.jpg" alt="Character 16"><div class="caption">pose 16</div></div>
+    <div class="card"><img src="shocked.jpg" alt="Character 17"><div class="caption">pose 17</div></div>
+    <div class="card"><img src="thinking.jpg" alt="Character 18"><div class="caption">pose 18</div></div>
+    <div class="card"><img src="concentration.jpg" alt="Character 19"><div class="caption">pose 19</div></div>
+    <div class="card"><img src="charatcter facing the camera.jpg" alt="Character 20"><div class="caption">pose 20</div></div>
+  </div>
+
+   <footer>
+    <p>© 2026 KÜT-TOONS</p>
+    <div>
+      <a href="https://www.youtube.com/@kut4real">YouTube</a>
+      <a href="https://www.instagram.com/kut4real1?igsh=cDVvZ21ieGxkbTZr">Instagram</a>
+      <a href="#">Twitter / X</a>
+    </div>
+  </footer>
+
+  <!-- CORNER CHARACTERS -->
+  <img src="youtube_character-removebg-preview.png" alt="Finn" class="corner-img corner-left" />
+  <img src="relaxing-removebg-preview.png" alt="Ben 10" class="corner-img corner-right" />
+
+
+</body>
+</html>

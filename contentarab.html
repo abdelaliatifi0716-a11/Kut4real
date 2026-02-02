@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KÜT-TOONS | جميع الحلقات</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #050000;
+      color: #fff;
+      overflow-x: hidden;
+      direction: rtl;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 10% 40px;
+      position: relative;
+    }
+
+    header h1 {
+      font-family: 'Creepster', cursive;
+      font-size: 3.8rem;
+      color: #b30000;
+      text-shadow: 0 0 20px #ff0000, 0 0 40px #ff3333;
+      animation: flicker 2.5s infinite;
+      margin-bottom: 15px;
+    }
+
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+      20%, 22%, 24%, 55% { opacity: 0.6; }
+    }
+
+    header p {
+      color: #ccc;
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: #1a0000;
+      border: 2px solid #b30000;
+      border-radius: 12px;
+      color: #ff6666;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-bottom: 40px;
+    }
+
+    .back-btn:hover {
+      background: #b30000;
+      color: #fff;
+      box-shadow: 0 0 20px #ff0000;
+      transform: translateY(-3px);
+    }
+
+    .lang-btn {
+      position: absolute;
+      top: 40px;
+      left: 10%;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #1a0000;
+      border: 2px solid #b30000;
+      color: #ff4d4d;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+    .lang-btn:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 25px rgba(255,0,0,0.7), 0 0 50px rgba(255,0,0,0.4) inset;
+      background: #b30000;
+      color: #fff;
+    }
+
+    .video-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      padding: 50px 10%;
+    }
+
+    @media (max-width: 992px) { .video-gallery { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .video-gallery { grid-template-columns: 1fr; } }
+
+    .video-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .video-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      background: radial-gradient(circle, rgba(255,0,0,0.5) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+ /* FOOTER */
+    footer {
+      padding: 50px 10%;
+      background: #020000;
+      border-top: 1px solid #2a0000;
+      text-align: center;
+    }
+    footer a { color: #777; margin: 0 10px; text-decoration: none; font-size: 0.9rem; }
+    footer a:hover { color: #ff4d4d; }
+
+    /* CORNER CHARACTERS */
+    .corner-img {
+      position: fixed;
+      bottom: 0;
+      width: 120px;
+      opacity: 0.85;
+      z-index: 500;
+      cursor: pointer;
+      transition: transform 0.35s ease, opacity 0.35s ease;
+      filter: drop-shadow(0 0 15px rgba(255,0,0,0.6));
+    }
+    .corner-img:hover { transform: scale(1.4) translateY(-20px); opacity: 1; }
+    .corner-left { left: 0; }
+    .corner-right { right: 0; transform: scaleX(-1); }
+
+
+    .video-card:hover::before { opacity: 1; }
+    .video-card img {
+      width: 100%;
+      display: block;
+      border-radius: 16px 16px 0 0;
+      border: 1px solid #2a0000;
+    }
+
+    .video-card:hover { transform: scale(1.08); z-index: 10; }
+
+    .video-card div {
+      padding: 12px 10px;
+      background: #0b0b0b;
+      border: 1px solid #2a0000;
+      font-size: 0.95rem;
+      color: #ddd;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .video-card:hover div {
+      color: #ff4d4d;
+      text-shadow: 0 0 12px #ff0000, 0 0 20px #ff3333;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>KÜT-TOONS | جميع الحلقات</h1>
+    <p>اضغط على أي فيديو لمشاهدته!</p>
+    <a href="index_ar.html" class="back-btn">← العودة للرئيسية</a>
+    <a href="content.html" class="lang-btn" title="Switch to English">EN</a>
+  </header>
+
+  <section class="video-gallery">
+    <a href="https://youtu.be/YKW9Hw_JphA" class="video-card" target="_blank">
+      <img src="https://i9.ytimg.com/vi_webp/YKW9Hw_JphA/mqdefault.webp?v=688b3fd6&sqp=CPDq_ssG&rs=AOn4CLCMgYOMrE9gWyhokECtzV9uuuEr4g" alt="Video 1">
+      <div>🎬 كيف بدأت رحلة الكرتون؟ | من أول رسمة إلى أول فيلم</div>
+    </a>
+
+    <a href="https://youtu.be/sOsXETxsi-g" class="video-card" target="_blank">
+      <img src="https://i9.ytimg.com/vi/sOsXETxsi-g/mqdefault.jpg?v=688b3a69&sqp=CJzt_ssG&rs=AOn4CLA1qEhsItl4AAtMI9CILf3IKf1FOQ" alt="Video 2">
+      <div>تحليل كرتون خلف حائط الحديقة / الجزء الأول</div>
+    </a>
+
+    <a href="https://youtu.be/v22TaxXdkPg" class="video-card" target="_blank">
+      <img src="https://i9.ytimg.com/vi/v22TaxXdkPg/mqdefault.jpg?v=688b3a59&sqp=CKD0_ssG&rs=AOn4CLDs9WzKq0taxNB4Cwfb9sBrBX-6uw" alt="Video 3">
+      <div>تحليل كرتون خلف حائط الحديقة / الجزء الثاني</div>
+    </a>
+
+    <a href="https://youtu.be/5_4-2zdlzJ8" class="video-card" target="_blank">
+      <img src="https://i9.ytimg.com/vi/5_4-2zdlzJ8/mqdefault.jpg?v=688b3fe8&sqp=CKD0_ssG&rs=AOn4CLCIXrsaEl9-yUn9rzBYDV4sPZ9Elw" alt="Video 4">
+      <div>عودة غامبول ؟🔥 أسرار و توقعات الموسم الجديد 😎</div>
+    </a>
+
+    <a href="https://youtu.be/i6YyS_nebkw" class="video-card" target="_blank">
+      <img src="https://i9.ytimg.com/vi/i6YyS_nebkw/mqdefault.jpg?v=68d1834d&sqp=CMz2_ssG&rs=AOn4CLCtwM_k2gu6ku5Q1iP5jHUngg3LWQ" alt="Video 5">
+      <div>خلف حائط الحديقة | ملخص كامل | الفصل الأول</div>
+    </a>
+
+    <a href="https://youtu.be/Mnb2VT24vZc" class="video-card" target="_blank">
+      <img src="https://i9.ytimg.com/vi/Mnb2VT24vZc/mqdefault.jpg?v=68d1831e&sqp=CMz2_ssG&rs=AOn4CLD3kPmbFsGhN0BXl0pqJ6NFbbkxkw" alt="Video 6">
+      <div>خلف حائط الحديقة | ملخص كامل | الفصل التاني</div>
+    </a>
+
+    <a href="https://youtu.be/vgcndLPOmX4" class="video-card" target="_blank">
+      <img src="https://i9.ytimg.com/vi/vgcndLPOmX4/mqdefault.jpg?v=68d18339&sqp=CMz2_ssG&rs=AOn4CLBprfq3dof0zmuqbK3MZmbvDiU_9Q" alt="Video 7">
+      <div>خلف حائط الحديقة | ملخص كامل | الفصل التالت</div>
+    </a>
+
+    <a href="https://youtu.be/fDFR7uYRK48" class="video-card" target="_blank">
+      <img src="https://i9.ytimg.com/vi/fDFR7uYRK48/mqdefault.jpg?v=68d182f9&sqp=CMz2_ssG&rs=AOn4CLCvqRPZzhEMRHG7I892OErDybqeMg" alt="Video 8">
+      <div>خلف حائط الحديقة | ملخص كامل | الفصل الرابع</div>
+    </a>
+
+    <a href="https://youtu.be/hIz85RIKgwM" class="video-card" target="_blank">
+      <img src="https://i9.ytimg.com/vi/hIz85RIKgwM/mqdefault.jpg?v=68d182cb&sqp=CMz2_ssG&rs=AOn4CLCpzvsZbJXMljz6a1lfXYAdXkhttQ" alt="Video 9">
+      <div>خلف حائط الحديقة | ملخص كامل | الفصل الخامس</div>
+    </a>
+
+    <a href="https://youtu.be/1Vh_calkRnY" class="video-card" target="_blank">
+      <img src="https://i9.ytimg.com/vi/1Vh_calkRnY/mqdefault.jpg?v=68d182b1&sqp=CMz2_ssG&rs=AOn4CLDGYOFlAX0Gi5esMnfHesfHLsTHQQ" alt="Video 10">
+      <div>خلف حائط الحديقة | ملخص كامل | الفصل السادس</div>
+    </a>
+
+    <a href="https://example.com/video11" class="video-card" target="_blank">
+      <img src="https://i9.ytimg.com/vi/Xp2o_4k1IVY/mqdefault.jpg?v=68d182a0&sqp=CMjv_ssG&rs=AOn4CLDhz1WahDmIcGR6vTmgOieo8Heyeg" alt="Video 11">
+      <div>خلف حائط الحديقة | ملخص كامل | الفصل السابع</div>
+    </a>
+
+    <a href="https://youtu.be/PgJWkQvxk1k" class="video-card" target="_blank">
+      <img src="https://i9.ytimg.com/vi/PgJWkQvxk1k/mqdefault.jpg?v=68d191be&sqp=CMjv_ssG&rs=AOn4CLAsP0elQBUzRILNorCvzltodPUv9g" alt="Video 12">
+      <div>خلف حائط الحديقة | ملخص كامل | الفصل الثامن</div>
+    </a>
+
+    <a href="https://youtu.be/IQjyoS8D9gg" class="video-card" target="_blank">
+      <img src="https://i9.ytimg.com/vi/IQjyoS8D9gg/mqdefault.jpg?v=68e95e51&sqp=CPTx_ssG&rs=AOn4CLDzk4-QrlKNB8wa5RdWkitJxkbTUg" alt="Video 13">
+      <div>تحقيقات عن 4 ألغاز حيرت الجميع في عالم الكرتون</div>
+    </a>
+
+    <a href="https://youtu.be/ndUtk6UC5_I" class="video-card" target="_blank">
+      <img src="https://i9.ytimg.com/vi/ndUtk6UC5_I/mqdefault.jpg?v=690ce82a&sqp=CPTx_ssG&rs=AOn4CLBr3lJazj4R3xtYnq2pHAequFx85g" alt="Video 14">
+      <div>من الأفضل؟ الكرتونات القديمة او الجديدة👀🧐</div>
+    </a>
+
+    <a href="https://youtu.be/wih4G77BvTQ" class="video-card" target="_blank">
+      <img src="https://i9.ytimg.com/vi/wih4G77BvTQ/mqdefault.jpg?v=694ab0a3&sqp=CPTx_ssG&rs=AOn4CLACvMYZGZmNUQB9VRk12OFpfj5nZw" alt="Video 15">
+      <div>كرتونات مظلومة عبر التاريخ 😶‍🌫️✨ الجزء الأول</div>
+    </a>
+  </section>
+
+   <footer>
+    <p>© 2026 KÜT-TOONS</p>
+    <div>
+      <a href="https://www.youtube.com/@kut4real">YouTube</a>
+      <a href="https://www.instagram.com/kut4real1?igsh=cDVvZ21ieGxkbTZr">Instagram</a>
+      <a href="#">Twitter / X</a>
+    </div>
+  </footer>
+
+  <!-- CORNER CHARACTERS -->
+  <img src="seeing_weird-removebg-preview.png" alt="Finn" class="corner-img corner-left" />
+  <img src="noble-removebg-preview.png" alt="Ben 10" class="corner-img corner-right" />
+
+
+
+</body>
+</html>

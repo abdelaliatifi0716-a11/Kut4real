@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KÜT-TOONS | مركز ذكاء الرسوم المتحركة</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #050000;
+      color: #eaeaea;
+      overflow-x: hidden;
+      direction: rtl;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 16px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #2a0000;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-family: 'Creepster', cursive;
+      font-size: 1.8rem;
+      color: #b30000;
+      letter-spacing: 3px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ff4d4d;
+      transform: translateY(-2px);
+    }
+
+    /* Language toggle button */
+    .lang-circle {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: #1a0000;
+      border: 2px solid #b30000;
+      color: #ff4d4d;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+    .lang-circle:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 25px rgba(255,0,0,0.7), 0 0 50px rgba(255,0,0,0.4) inset;
+      background: #b30000;
+      color: #fff;
+    }
+
+    /* HERO (PARALLAX) */
+    header {
+      height: 100vh;
+      background-image: url('background kut toons.jpg');
+      background-size: cover;
+      background-position: left;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: 0 10%;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-family: 'Creepster', cursive;
+      font-size: 4.2rem;
+      color: #b30000;
+      text-shadow: 0 0 20px #ff0000;
+      margin-bottom: 20px;
+      animation: flicker 3s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #ddd;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 14px 36px;
+      border: 2px solid #b30000;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 2px;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cta:hover {
+      background: #b30000;
+      box-shadow: 0 0 20px #ff0000;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 100px 10%;
+    }
+
+    .section-title {
+      font-family: 'Creepster', cursive;
+      font-size: 2.8rem;
+      color: #b30000;
+      margin-bottom: 50px;
+    }
+
+    /* EPISODES GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #0b0b0b;
+      border: 1px solid #2a0000;
+      padding: 24px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
+    }
+
+    .card h3 {
+      color: #ff4d4d;
+      margin: 12px 0 8px;
+    }
+
+    .thumb {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid #2a0000;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .card p {
+      color: #bbb;
+      font-size: 0.95rem;
+    }
+
+    /* STATS */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .stat {
+      background: #0b0b0b;
+      padding: 36px 20px;
+      border: 1px solid #2a0000;
+    }
+
+    .stat h3 {
+      font-size: 2rem;
+      color: #ff4d4d;
+    }
+
+    .stat p {
+      color: #aaa;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 50px 10%;
+      background: #020000;
+      border-top: 1px solid #2a0000;
+      text-align: center;
+    }
+
+    footer a {
+      color: #777;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    footer a:hover {
+      color: #ff4d4d;
+    }
+
+    /* CORNER CHARACTERS */
+    .corner-img {
+      position: fixed;
+      bottom: 0;
+      width: 120px;
+      opacity: 0.85;
+      z-index: 500;
+      cursor: pointer;
+      transition: transform 0.35s ease, opacity 0.35s ease;
+      filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.6));
+    }
+
+    .corner-img:hover {
+      transform: scale(1.4) translateY(-20px);
+      opacity: 1;
+    }
+
+    .corner-left { left: 0; }
+    .corner-right { right: 0; transform: scaleX(-1); }
+
+    /* Arrow circle for all episodes */
+    .arrow-circle {
+      position: absolute;
+      left: 3%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #1a0000;
+      border: 2px solid #b30000;
+      color: #ff4d4d;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      box-shadow: 0 0 10px rgba(255,0,0,0.4);
+      z-index: 10;
+    }
+
+    .arrow-circle:hover {
+      transform: translateY(-50%) scale(1.3);
+      box-shadow: 0 0 25px rgba(255,0,0,0.7), 0 0 50px rgba(255,0,0,0.4) inset;
+      background: #b30000;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 3rem; }
+      .corner-img { width: 90px; }
+      nav ul { gap: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">KÜT-TOONS</div>
+    <ul>
+      <li><a href="#about">🎨 عن القناة</a></li>
+      <li><a href="#episodes">📺 الحلقات</a></li>
+      <li><a href="#stats">📊 الإحصائيات</a></li>
+      <li><a href="content.html">👀 كل المحتوى</a></li>
+      <li><a href="https://www.youtube.com/@kut4real" target="_blank">▶ يوتيوب</a></li>
+      <!-- Language toggle button -->
+      <li><a href="index.html" class="lang-circle" title="Switch to English">EN</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="hero-content">
+      <h1>KÜT-TOONS</h1>
+      <p>هنا ستكتشف أسرار الرسوم المتحركة وتفاصيل لم تلاحظها من قبل!</p>
+      <a href="#episodes" class="cta">استكشف الحلقات</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2 class="section-title">ما هي KÜT-TOONS؟</h2>
+    <p>
+      KÜT-TOONS تحلل الرسوم المتحركة إطارًا بإطار، كاشفةً عن التفاصيل المخفية، وحيل الرسوم، والمفاهيم غير المستخدمة، وأسرار الخلفية التي لا يلاحظها معظم المشاهدين.
+      🎬 مرحبًا بك في مختبرنا السري حيث تكشف الرسوم المتحركة أسرارها المضحكة والمخيفة!
+      هل لاحظت الظل الغريب خلف جدار الملعب أو تلك الشخصية التي تبدو سعيدة جدًا في الساعة 3 صباحًا؟ 👀 نحن نلاحظ ذلك. نستعرض كل إطار، نكشف النكات المخفية، و Easter Eggs المخيفة، وحيل الرسوم التي يأمل المبدعون ألا تلاحظها.
+      من الأسرار المثيرة إلى اللحظات المضحكة، كيوت-تونس هي دليلك لكل ما هو غريب ومرح ورائع في عالم الكرتون.
+    </p>
+  </section>
+
+  <section id="character">
+    <h2 class="section-title">شخصية القناة</h2>
+    <div class="grid">
+      <div class="card">
+        <a href="charactersarab.html">
+          <img src="youtube character.jpg" alt="شخصية كيوت-تونس" class="thumb" />
+          <h3>شخصيتك الكرتونية</h3>
+          <p>ضع شخصيتك الرئيسية أو الماسكوت هنا. استبدل هذه الصورة بتصميمك الخاص.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="episodes" style="position: relative;">
+    <h2 class="section-title">الحلقات المنشورة</h2>
+
+    <!-- Arrow circle for all episodes -->
+    <a href="contentarab.html" class="arrow-circle" title="رؤية كل الحلقات">←</a>
+
+    <div class="grid">
+      <div class="card">
+        <a href="https://youtu.be/i6YyS_nebkw" target="_blank">
+          <img src="https://i9.ytimg.com/vi/i6YyS_nebkw/mqdefault.jpg?v=68d1834d&sqp=CISO_8sG&rs=AOn4CLBTZy5h_w96G4av4bgIlxl65WeO3A" alt="الحلقة 1" class="thumb" />
+          <h3>خلف حائط الحديقة | ملخص كامل | الفصل الأول</h3>
+          <p>👋 مرحبًا بوحوش الشاشة وكل المشاهدين الجدد!.</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="https://youtu.be/YKW9Hw_JphA?si=32IV3JZJbdJ97GEj" target="_blank">
+          <img src="https://i9.ytimg.com/vi_webp/YKW9Hw_JphA/mqdefault.webp?v=688b3fd6&sqp=CISO_8sG&rs=AOn4CLBb_xYiym1lchl4uFnnUFGtO2_7zg" alt="الحلقة 2" class="thumb" />
+          <h3>🎬 كيف بدأت رحلة الكرتون؟ | من أول رسمة إلى أول فيلم</h3>
+          <p>📜 نغوص في أعماق التاريخ لنكشف كيف انطلقت أولى خطوات عالم الكرتون الساحر.</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="https://youtu.be/IQjyoS8D9gg?si=go0v6SEmGO8kBYgQ" target="_blank">
+          <img src="https://i9.ytimg.com/vi/IQjyoS8D9gg/mqdefault.jpg?v=68e95e51&sqp=CISO_8sG&rs=AOn4CLBrny6KIXhb4RAx--vFBcvmqJyaaQ" alt="الحلقة 3" class="thumb" />
+          <h3>تحقيقات عن 4 ألغاز حيرت الجميع في عالم الكرتون</h3>
+          <p>اهلا👋🏻لا تنسى الاشتراك و وضع لايك للمقطع...ذلك يساعدني كثيرا</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="stats">
+    <h2 class="section-title">الاحصائيات</h2>
+    <div class="stats">
+      <div class="stat"><h3>2678</h3><p>المشتركين</p></div>
+      <div class="stat"><h3>578,2 k</h3><p>عدد المشاهدات</p></div>
+      <div class="stat"><h3>15</h3><p>الحلقات المنشورة</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 KÜT-TOONS</p>
+    <div>
+      <a href="https://www.youtube.com/@kut4real">يوتيوب</a>
+      <a href="https://www.instagram.com/kut4real1?igsh=cDVvZ21ieGxkbTZr">إنستغرام</a>
+      <a href="#">تويتر / X</a>
+    </div>
+  </footer>
+
+  <!-- CORNER CHARACTERS -->
+  <img src="character_facing_camera-removebg-preview.png" alt="فين" class="corner-img corner-left" />
+  <img src="WhatsApp_Image_2026-01-30_at_01.51.41-removebg-preview.png" alt="بن 10" class="corner-img corner-right" />
+
+</body>
+</html>
